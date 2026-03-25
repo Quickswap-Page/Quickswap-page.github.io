@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /quickswap/
+Sitemap: https://quickswap.github.io/sitemap.xml
